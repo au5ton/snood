@@ -4,9 +4,14 @@ import requests
 import shutil
 import subprocess
 import stat
+from pathlib import Path
 
-youtubedl_location = os.path.join(os.path.dirname(__file__), 'snood', 'youtube-dl')
-ripme_location = os.path.join(os.path.dirname(__file__), 'snood', 'ripme.jar')
+p = Path()
+p = p / os.path.dirname(__file__) / 'bin'
+p.mkdir(exist_ok=True)
+
+youtubedl_location = os.path.join(os.path.dirname(__file__), 'bin', 'youtube-dl')
+ripme_location = os.path.join(os.path.dirname(__file__), 'bin', 'ripme.jar')
 
 with requests.get('https://yt-dl.org/downloads/latest/youtube-dl', stream=True) as r:
         with open(youtubedl_location, 'wb') as f:

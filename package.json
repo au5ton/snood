@@ -1,0 +1,41 @@
+{
+  "name": "snood",
+  "version": "1.0.0",
+  "description": "Reddit snoo daemon",
+  "main": "./dist/main.js",
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/main.ts",
+    "build": "npx tsc -p .",
+    "watch": "nodemon --watch src/ --ext js,mjs,json,ts --exec 'clear; npm run build'",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
+    "preinstall": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/au5ton/snood.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/au5ton/snood/issues"
+  },
+  "homepage": "https://github.com/au5ton/snood#readme",
+  "dependencies": {
+    "bull": "^3.16.0",
+    "bull-board": "^0.9.0",
+    "chalk": "^4.1.0",
+    "commander": "^6.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "get-port": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/bull": "^3.14.0",
+    "@types/bull-board": "^0.6.0",
+    "@types/node": "^14.0.27",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}
